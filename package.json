@@ -1,0 +1,19 @@
+{
+  "name": "coding-challenge-lp",
+  "version": "1.0.0",
+  "description": "coding challenge",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/josleugim/coding-challenge-lp.git"
+  },
+  "author": "mordekaiser",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/josleugim/coding-challenge-lp/issues"
+  },
+  "homepage": "https://github.com/josleugim/coding-challenge-lp#readme"
+}
