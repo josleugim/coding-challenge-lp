@@ -24,6 +24,7 @@
     "jsonwebtoken": "^8.3.0",
     "mongoose": "^5.2.15",
     "mongoose-timestamp": "^0.6.0",
+    "multer": "^1.3.1",
     "path": "^0.12.7"
   },
   "devDependencies": {

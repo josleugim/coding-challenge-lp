@@ -9,6 +9,7 @@ const config = require('./server/config/configuration')[env];
 require('./server/config/express')(app, config);
 require('./server/config/mongoose')(config);
 
+require('./server/routes/v1/products')(app, config);
 require('./server/routes/v1/home')(app, config);
 
 app.listen(config.port, function () {
