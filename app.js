@@ -2,7 +2,7 @@
 
 const express = require('express'),
     dotenv = require('dotenv').config();
-let env = process.env.NODE_ENV = process.env.NODE_ENV || 'development';
+let env = process.env.NODE_ENV = process.env.NODE_ENV || 'staging';
 
 const app = express();
 const config = require('./server/config/configuration')[env];

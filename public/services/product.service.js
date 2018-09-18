@@ -3,7 +3,7 @@ angular.module('myApp')
     .factory('ProductService', ['$q', '$http', '$location', ProductService]);
 
 function ProductService($q, $http, $location) {
-    var host = 'http://' + $location.host() + ':4000/';
+    var host = 'http://' + $location.host() + '/';
     return {
         post: post,
         get: get,

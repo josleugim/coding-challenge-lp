@@ -3,10 +3,9 @@ const path = require('path');
 const rootPath = path.normalize(__dirname + '/../../');
 
 module.exports = {
-    development: {
-        db: process.env.DB,
+    staging: {
+        db: 'mongodb://josleugim:bruj3ria@ds261342.mlab.com:61342/coding-challenge-lp',
         rootPath: rootPath,
-        port: process.env.PORT,
-        tokenSecret: process.env.TOKEN_SECRET
+        port: 8081
     }
 };
