@@ -11,7 +11,7 @@ const ProductSchema = mongoose.Schema({
         required: 'The name is required'
     },
     price: {
-        type: String,
+        type: Number,
         required: 'Price required'
     },
     image: {

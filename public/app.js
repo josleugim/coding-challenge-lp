@@ -21,4 +21,9 @@ function configuration($locationProvider, $stateProvider, $urlRouterProvider) {
             templateUrl: '/templates/product/index.html',
             controller: 'ProductCtrl',
         })
+        .state('product-edit', {
+            url: '/product/:id',
+            templateUrl: '/templates/product/edit.html',
+            controller: 'EditProductCtrl',
+        })
 }

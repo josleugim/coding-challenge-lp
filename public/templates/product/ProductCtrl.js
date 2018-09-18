@@ -30,6 +30,7 @@ function ProductCtrl($scope, fileReader, ProductService) {
             ProductService.post(data).then(function (data) {
                 if(data.success) {
                     $scope.product = {};
+                    getProductList({});
                 }
             })
         }
