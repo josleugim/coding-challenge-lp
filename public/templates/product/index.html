@@ -32,11 +32,16 @@
     <div class="col-lg-3 col-md-3 col-sm-12">Opciones</div>
 </div>
 <hr>
-<div class="row" ng-repeat="product in products">
-    <div class="col-lg-4 col-md-4 col-sm-12">{{product.name}}</div>
+<div class="row" ng-repeat="product in products | orderBy : $index">
+    <div class="col-lg-4 col-md-4 col-sm-12">{{product.name}} {{product._id}}</div>
     <div class="col-lg-2 col-md-2 col-sm-12">{{product.price | currency}}</div>
     <div class="col-lg-3 col-md-3 col-sm-12">
         <img class="img-thumbnail" src="{{product.image}}" alt="{{product.name}}">
     </div>
-    <div class="col-lg-3 col-md-3 col-sm-12"><p><a class="btn btn-info" ui-sref="product-edit({id: product._id})">Modificar</a></p></div>
+    <div class="col-lg-3 col-md-3 col-sm-12">
+        <p>
+            <a class="btn btn-info" ui-sref="product-edit({id: product._id})">Modificar</a>
+            <a class="btn btn-danger" ng-click="deleteProduct(product._id)">Borrar</a>
+        </p>
+    </div>
 </div>

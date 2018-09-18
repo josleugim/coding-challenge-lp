@@ -8,4 +8,5 @@ module.exports = (app) => {
     app.get('/api/v1/products', productCtrl.get);
     app.get('/api/v1/products/:id', productCtrl.getById);
     app.put('/api/v1/products/:id', productImages.single('image'), productCtrl.put);
+    app.delete('/api/v1/products/:id', productCtrl.del);
 };

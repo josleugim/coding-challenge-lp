@@ -36,7 +36,18 @@ function ProductCtrl($scope, fileReader, ProductService) {
         }
     };
 
+    $scope.deleteProduct = function (id) {
+        if(typeof id !== 'undefined') {
+            ProductService.del(id).then(function (data) {
+                if(data.success) {
+                    getProductList({});
+                }
+            })
+        }
+    };
+
     function getProductList(query) {
+        $scope.products = [];
         ProductService.get(query).then(function (data) {
             if(data.success) {
                 $scope.products = data.products;

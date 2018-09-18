@@ -8,7 +8,8 @@ function ProductService($q, $http, $location) {
         post: post,
         get: get,
         getById: getById,
-        put: put
+        put: put,
+        del: del
     };
 
     function post(data) {
@@ -91,6 +92,24 @@ function ProductService($q, $http, $location) {
             transformRequest: angular.indentity,
             headers: {
                 'Content-Type': undefined
+            }
+        }).then(function successCallback(response) {
+            dfd.resolve(response.data);
+        }, function errorCallback(response) {
+            dfd.resolve(response.data);
+        });
+
+        return dfd.promise;
+    }
+
+    function del(id) {
+        var dfd = $q.defer();
+
+        $http({
+            method: 'DELETE',
+            url: host + 'api/v1/products/' + id,
+            headers: {
+                'Content-Type': 'application/json'
             }
         }).then(function successCallback(response) {
             dfd.resolve(response.data);

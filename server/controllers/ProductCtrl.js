@@ -147,3 +147,33 @@ exports.put = (req, res) => {
         res.status(304).json(resData);
     }
 };
+
+exports.del = (req, res) => {
+    // console.log('DELETE');
+    const resData = {
+        success: true
+    };
+
+    if(req.params.id) {
+        Product
+            .findOne({ _id: req.params.id })
+            .remove()
+            .exec((err, result) => {
+                if(err) {
+                    console.error('CourseCtrl - DELETE. ' + err);
+                }
+                if(result) {
+                    res.status(200).json(resData);
+                }
+                else {
+                    resData.success = false;
+                    resData.message = 'No se pudo eliminar el producto';
+                    res.status(404).json(resData);
+                }
+            })
+    } else {
+        resData.success = false;
+        resData.message = 'No se pudo eliminar el producto';
+        res.status(404).json(resData);
+    }
+};
