@@ -48,7 +48,6 @@ function EditProductCtrl($scope, fileReader, ProductService, $stateParams, $stat
         ProductService.getById(query).then(function (data) {
             if(data.success) {
                 $scope.product = data.product;
-                console.log($scope.product);
             }
         })
     }

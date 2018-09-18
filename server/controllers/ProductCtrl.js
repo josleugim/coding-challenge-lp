@@ -121,12 +121,11 @@ exports.put = (req, res) => {
     }
 
     if(req.file) {
-        data.image = req.file;
+        data.image = req.file.filename;
     }
 
     if(typeof data.name !== 'undefined' || typeof data.price !== 'undefined' || typeof data.image !== 'undefined') {
         data.updatedAt = new Date();
-        console.log(query);
         Product
             .findOneAndUpdate(query, { $set: data })
             .exec((err, result) => {
