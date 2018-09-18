@@ -35,8 +35,6 @@ function EditProductCtrl($scope, fileReader, ProductService, $stateParams, $stat
                 data.image = $scope.file;
             }
 
-            console.log(data);
-
             ProductService.put(query, data).then(function (data) {
                 if(data.success) {
                     $scope.product = {};
@@ -54,4 +52,12 @@ function EditProductCtrl($scope, fileReader, ProductService, $stateParams, $stat
             }
         })
     }
+
+    $scope.getFile = function () {
+        $scope.progress = 0;
+        fileReader.readAsDataUrl($scope.file, $scope)
+            .then(function(result) {
+                $scope.imageSrc = result;
+            });
+    };
 }
