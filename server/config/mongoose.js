@@ -1,6 +1,7 @@
 'use strict';
 const mongoose = require('mongoose'),
-    ProductModel = require('../models/Product');
+    ProductModel = require('../models/Product'),
+    CulturaModel = require('../models/Cultura');
 
 module.exports = (config) => {
     mongoose.connect(config.db);

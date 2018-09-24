@@ -26,4 +26,9 @@ function configuration($locationProvider, $stateProvider, $urlRouterProvider) {
             templateUrl: '/templates/product/edit.html',
             controller: 'EditProductCtrl',
         })
+        .state('cultura', {
+            url: '/cultura',
+            templateUrl: '/templates/cultura/index.html',
+            controller: 'CulturaCtrl',
+        })
 }
